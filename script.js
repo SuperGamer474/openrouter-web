@@ -36,10 +36,7 @@ const appState = {
 
 async function fetchApiKey() {
     try {
-        const response = await fetch('https://supergamer474.pythonanywhere.com/openrouter-api-key');
-        if (!response.ok) throw new Error('Failed to fetch API key');
-        const data = await response.text(); // assuming the key is just plain text
-        const apiKey = data.trim();
+        const apiKey = "csk-nhykr5xjwe495twcvtx383wh3vnyj2n4x9nr26k56mje6jxr"
         appState.apiKey = apiKey;
         localStorage.setItem('apiKey', apiKey);
         sessionStorage.setItem('apiKey', apiKey);
@@ -943,7 +940,7 @@ async function callApi(waitingIndicator) {
         if (appState.settings.streaming) {
             appState.currentlyStreaming = true;
 
-            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+            const response = await fetch('https://api.cerebras.ai/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1028,7 +1025,7 @@ async function callApi(waitingIndicator) {
             }
 
         } else {
-            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+            const response = await fetch('https://api.cerebras.ai/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1188,6 +1185,7 @@ function playSoundSafely(audioElement) {
         }
     });
 }
+
 
 
 
