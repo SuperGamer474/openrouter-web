@@ -735,7 +735,6 @@ async function sendMessage() {
     const userMessage = {
         role: 'user',
         content: promptText,
-        timestamp: new Date().toISOString()
     };
 
     appState.chats[appState.currentChatId].messages.push(userMessage);
@@ -1185,6 +1184,7 @@ function playSoundSafely(audioElement) {
         }
     });
 }
+
 
 
 
